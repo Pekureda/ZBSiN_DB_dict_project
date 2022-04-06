@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="50.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="put.projdbdict.dbdictproj.DBWindowController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="555.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#onActionRefresh" text="Refresh" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onActionDelete" text="Delete" />
+            <TextField fx:id="filterTextBox" prefHeight="25.0" prefWidth="138.0" promptText="Enter filtering phrase" />
+            <Button fx:id="filterButton" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#onActionFilter" text="Filter" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <TabPane fx:id="DBWindowTabPane" onMouseClicked="#onMouseClickedTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Kanji">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="kanjiTable" prefHeight="411.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="kanjiCharacterCol" editable="false" prefWidth="75.0" text="Character" />
+                              <TableColumn fx:id="kanjiDate_addedCol" editable="false" prefWidth="75.0" text="Date_added" />
+                              <TableColumn fx:id="kanjiProficiencyCol" editable="false" prefWidth="75.0" text="Proficiency" />
+                              <TableColumn fx:id="kanjiLast_testedCol" editable="false" prefWidth="75.0" text="Last_tested" />
+                              <TableColumn fx:id="kanjiJLPT_classificationCol" onEditCommit="#onEditCommitJLPT" prefWidth="75.0" text="JLPT" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Reading">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="readingTable" prefHeight="411.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="readingKanjiCharacterCol" prefWidth="75.0" text="Character" />
+                            <TableColumn fx:id="readingIDCol" prefWidth="75.0" text="Reading ID" />
+                            <TableColumn fx:id="readingReadingCol" onEditCommit="#onEditCommitReading" prefWidth="75.0" text="Reading" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Meaning">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="meaningTable" prefHeight="411.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="meaningKanjiCharacterCol" prefWidth="75.0" text="Character" />
+                            <TableColumn fx:id="meaningIDCol" prefWidth="75.0" text="Meaning ID" />
+                            <TableColumn fx:id="meaningMeaningCol" onEditCommit="#onEditCommitMeaning" prefWidth="75.0" text="Meaning" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Usage">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="usageTable" prefHeight="411.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="usageKanjiCharacterCol" prefWidth="75.0" text="Character" />
+                            <TableColumn fx:id="usageIDCol" prefWidth="75.0" text="Example ID" />
+                            <TableColumn fx:id="usageExampleCol" prefWidth="75.0" text="Example" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Additional notes">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="additionalNotesTable" prefHeight="411.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="AdditionalNotesKanjiCharacterCol" prefWidth="75.0" text="Character" />
+                            <TableColumn fx:id="AdditionalNotesIDCol" prefWidth="75.0" text="Note ID" />
+                            <TableColumn fx:id="AdditionalNotesTypeCol" onEditCommit="#onEditCommitType" prefWidth="75.0" text="Type" />
+                              <TableColumn fx:id="AdditionalNotesDateAddedCol" prefWidth="75.0" text="Date added" />
+                              <TableColumn fx:id="AdditionalNotesNoteCol" onEditCommit="#onEditCommitNote" prefWidth="264.0" text="Note" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

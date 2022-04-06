@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#onWindowMousePressed" prefHeight="400.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="put.projdbdict.dbdictproj.MainWindowController">
+   <left>
+      <Pane prefHeight="400.0" prefWidth="165.0" style="-fx-background-color: #b2b2b2;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="48.0" layoutY="44.0" mnemonicParsing="false" onAction="#onAcceptButtonClick" prefHeight="25.0" prefWidth="70.0" text="Accept" />
+            <Button layoutX="48.0" layoutY="115.0" mnemonicParsing="false" onAction="#onReset_tabButtonClick" prefHeight="25.0" prefWidth="70.0" text="Clear tab" />
+            <Button layoutX="48.0" layoutY="307.0" mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="25.0" prefWidth="70.0" text="Exit" />
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <TabPane fx:id="mainWindowTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="addKanjiTab" text="Add kanji">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="addKanjiCharacterTextBox" layoutX="141.0" layoutY="33.0" prefHeight="60.0" prefWidth="60.0" promptText="字">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="addKanjiReadingTextBox" layoutX="96.0" layoutY="119.0" promptText="Divide with commas" />
+                        <TextField fx:id="addKanjiMeaningTextBox" layoutX="25.0" layoutY="179.0" prefHeight="25.0" prefWidth="290.0" promptText="Divide with commas" />
+                        <TextArea fx:id="usageTextBox" layoutX="15.0" layoutY="231.0" prefHeight="90.0" prefWidth="309.0" promptText="Divide with commas" wrapText="true" />
+                        <Text layoutX="144.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character" />
+                        <Text layoutX="149.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reading" />
+                        <Text layoutX="146.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+                        <CheckBox fx:id="usageCheckBox" layoutX="133.0" layoutY="214.0" mnemonicParsing="false" onAction="#onActionUsageCheckBox" text="Usage" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="addUsageTab" text="Add usage">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="143.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character" />
+                        <TextField fx:id="addUsageCharacterTextBox" layoutX="96.0" layoutY="31.0" />
+                        <TextArea fx:id="addUsageUsageTextBox" layoutX="14.0" layoutY="85.0" prefHeight="233.0" prefWidth="309.0" wrapText="true" />
+                        <Text layoutX="152.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usage" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="addAdditionalNotesTab" text="Add additional notes">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="143.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character" />
+                        <TextField fx:id="addAdditionalNotesCharacterTextBox" layoutX="96.0" layoutY="31.0" />
+                        <TextArea fx:id="addAdditionalNotesAdditionalNotesTextBox" layoutX="14.0" layoutY="168.0" prefHeight="149.0" prefWidth="309.0" wrapText="true" />
+                        <Text layoutX="157.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+                        <ChoiceBox fx:id="addAdditionalNotesTypeChoiceBox" layoutX="95.0" layoutY="90.0" prefWidth="150.0" />
+                        <Text layoutX="126.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional notes" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <Button mnemonicParsing="false" onAction="#onOpen_DBButtonClick" text="Open DB" />
+            <Button mnemonicParsing="false" onAction="#onTest_yourselfButtonClick" text="Stats" />
+         </items>
+      </ToolBar>
+   </top>
+</BorderPane>

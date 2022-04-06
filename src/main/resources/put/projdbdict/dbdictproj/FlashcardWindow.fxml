@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="put.projdbdict.dbdictproj.FlashcardWindowController">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="flashcardCharacterText" layoutX="159.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Character">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <Text layoutX="214.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reading" />
+            <Text layoutX="212.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+            <Text layoutX="210.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Examples" />
+            <Text fx:id="flashcardReadingText" layoutX="224.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+            <Text fx:id="flashcardMeaningText" layoutX="224.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+            <Text fx:id="flashcardExamplesText" layoutX="224.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+         </children>
+      </Pane>
+   </center>
+   <left>
+      <Pane prefHeight="400.0" prefWidth="129.0" style="-fx-background-color: b2b2b2;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="flashcardGoodButton" layoutX="32.0" layoutY="140.0" minWidth="65.0" mnemonicParsing="false" onAction="#onActionGoodButton" text="Good" />
+            <Button fx:id="flashcardMediumButton" layoutX="32.0" layoutY="188.0" minWidth="65.0" mnemonicParsing="false" onAction="#onActionMediumButton" text="Medium" />
+            <Button fx:id="flashcardBadButton" layoutX="32.0" layoutY="238.0" minWidth="65.0" mnemonicParsing="false" onAction="#onActionBadButton" text="Bad" />
+            <Button fx:id="flashcardExitButton" layoutX="32.0" layoutY="343.0" minWidth="65.0" mnemonicParsing="false" onAction="#onActionExitButton" text="Exit" />
+            <Button fx:id="flashcardRevealButton" layoutX="32.0" layoutY="45.0" minWidth="65.0" mnemonicParsing="false" onAction="#onActionRevealButton" text="Reveal" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
