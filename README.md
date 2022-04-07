@@ -1,6 +1,7 @@
 # ZBSiN_DB_dict_project
 
 Used IDE: IntelliJ IDEA 2021.3
+
 Credentials required to connect to external Oracle Database are hardcoded and placeholders must be replaced to run.
 
 This repository contains a desktop Java application of an English-Japanese dictionary.
